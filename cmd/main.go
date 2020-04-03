@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/jtblin/go-ldap-client"
+	"github.com/parkr/go-ldap-client"
 )
 
 var base, bindDN, bindPassword, groupFilter, host, password, serverName, userFilter, username string

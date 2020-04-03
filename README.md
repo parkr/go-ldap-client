@@ -4,7 +4,7 @@ Simple ldap client to authenticate, retrieve basic information and groups for a 
 
 # Usage
 
-[Go Doc](https://godoc.org/github.com/jtblin/go-ldap-client)
+[Go Doc](https://godoc.org/github.com/parkr/go-ldap-client)
 
 See [example](example_test.go). The only external dependency is [gopkg.in/ldap.v2](http://gopkg.in/ldap.v2).
 
@@ -14,7 +14,7 @@ package main
 import (
 	"log"
 
-	"github.com/jtblin/go-ldap-client"
+	"github.com/parkr/go-ldap-client"
 )
 
 func main() {
@@ -40,12 +40,12 @@ func main() {
 		log.Fatalf("Authenticating failed for user %s", "username")
 	}
 	log.Printf("User: %+v", user)
-	
+
 	groups, err := client.GetGroupsOfUser("username")
 	if err != nil {
 		log.Fatalf("Error getting groups for user %s: %+v", "username", err)
 	}
-	log.Printf("Groups: %+v", groups) 
+	log.Printf("Groups: %+v", groups)
 }
 ```
 
@@ -57,5 +57,5 @@ or skip domain name verification e.g.`client.ServerName = "ldap.example.com"`.
 # Why?
 
 There are already [tons](https://godoc.org/?q=ldap) of ldap libraries for `golang` but most of them
-are just forks of another one, most of them are too low level or too limited (e.g. do not return errors 
+are just forks of another one, most of them are too low level or too limited (e.g. do not return errors
 which make it hard to troubleshoot issues).
